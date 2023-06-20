@@ -1,5 +1,7 @@
 package com.playdata.assignment.servlet.adminservlet;
 
+import com.playdata.assignment.dao.AdminDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,11 @@ public class PreviewInsertServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
+        String movieName=req.getParameter("movieName");
+        String movieDate=req.getParameter("movieDate");
+        new AdminDao().preInsert(movieName,movieDate);
+        resp.sendRedirect("/adminpreviewinsert");
+
     }
 }
