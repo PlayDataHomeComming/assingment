@@ -18,8 +18,8 @@
 <div class="align">
     <form method="post" action="/admincinemainsert">
         <h1>영화관 정보 등록하기</h1>
-        <input type="text" name="movieName" style="text-align:center; width: 250px; height: 30px; font-size: 20px;" placeholder="영화관 이름을 입력해주세요"><br><br>
-        <input type="text" name="movieAt" style="text-align:center; width: 250px; height: 30px; font-size: 20px;" placeholder="영화관 지점을 입력해주세요"><br><br>
+        <input type="text" name="cinemaName" style="text-align:center; width: 250px; height: 30px; font-size: 20px;" placeholder="영화관 이름을 입력해주세요"><br><br>
+        <input type="text" name="moviePlace" style="text-align:center; width: 250px; height: 30px; font-size: 20px;" placeholder="영화관 지점을 입력해주세요"><br><br>
         <input type="text" name="chairNum" style="text-align:center; width: 250px; height: 30px; font-size: 20px;" placeholder="총 좌석수를 입력해주세요"><br>
         <div class="btn_wrap">
             <button type="submit">등록</button>

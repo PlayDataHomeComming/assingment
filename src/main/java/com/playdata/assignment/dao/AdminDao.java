@@ -29,4 +29,22 @@ public class AdminDao {
         }
 
     }
+    public void cinInsert(String cinemaName, String address, String numChair) {
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "insert into cinema(cinema_name, address,capacity_chair)\n" +
+                "values (?, ?,?)";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, cinemaName);
+            psmt.setString(2, address);
+            psmt.setString(3, numChair);
+
+            if (psmt.executeUpdate() == 0) {
+                System.out.println("insertPreview err");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
