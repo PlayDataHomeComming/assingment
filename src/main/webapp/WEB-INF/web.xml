@@ -7,5 +7,55 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+  <filter>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>modeServlet</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.ModeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modeServlet</servlet-name>
+    <url-pattern>/modeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminMain</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.AdminMainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminMain</servlet-name>
+    <url-pattern>/adminmain</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminPreviewInsert</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.PreviewInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminPreviewInsert</servlet-name>
+    <url-pattern>/adminpreviewinsert</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminCinemaInsert</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.CinemaInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminCinemaInsert</servlet-name>
+    <url-pattern>/admincinemainsert</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
 </web-app>
