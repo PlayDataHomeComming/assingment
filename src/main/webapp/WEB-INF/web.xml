@@ -24,6 +24,22 @@
     <servlet-name>adminMain</servlet-name>
     <url-pattern>/adminmain</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>adminPreviewInsert</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.PreviewInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminPreviewInsert</servlet-name>
+    <url-pattern>/adminpreviewinsert</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminCinemaInsert</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.CinemaInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminCinemaInsert</servlet-name>
+    <url-pattern>/admincinemainsert</url-pattern>
+  </servlet-mapping>
 
 
 
