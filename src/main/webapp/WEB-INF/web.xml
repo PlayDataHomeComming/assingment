@@ -13,6 +13,7 @@
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
+
     </init-param>
   </filter>
   <filter-mapping>
@@ -53,9 +54,31 @@
     <url-pattern>/admincinemainsert</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>adminCombine1</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.Combine1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminCombine1</servlet-name>
+    <url-pattern>/admincombine1</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>adminCombine2</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.Combine2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminCombine2</servlet-name>
+    <url-pattern>/admincombine2</url-pattern>
+  </servlet-mapping>
 
-
-
+  <servlet>
+    <servlet-name>adminPrintPerson</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.PersonPrintServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminPrintPerson</servlet-name>
+    <url-pattern>/adminprintperson</url-pattern>
+  </servlet-mapping>
 
 </web-app>
