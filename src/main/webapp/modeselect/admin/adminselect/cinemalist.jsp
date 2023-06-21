@@ -11,7 +11,7 @@
 <body>
 <h1 style="text-align: center;">영화관 정보</h1>
 <div class="align">
-    <table  style="border-spacing: 0; width: 700px;">
+    <table  style="border-spacing: 0; width: 500px;">
         <thead>
         <tr>
             <th>No.</th>
@@ -51,7 +51,7 @@
 
     </table>
 </div>
-<div style="text-align: center; ">
+<div style="text-align: center;transform: translateY(-30px);">
         <% for (int i = 1; i <= totalPages; i++) { %>
     <a href="?page=<%= i %>" style="color: #f9ffe5; text-decoration: none;"><%= i %></a>
         <% } %>
