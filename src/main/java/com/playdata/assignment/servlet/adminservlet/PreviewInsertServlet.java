@@ -11,6 +11,8 @@ import java.io.IOException;
 public class PreviewInsertServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         req.getRequestDispatcher("modeselect/admin/adminselect/previewinsert.jsp").forward(req,resp);
     }
 

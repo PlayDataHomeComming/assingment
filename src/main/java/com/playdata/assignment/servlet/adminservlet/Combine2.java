@@ -1,9 +1,7 @@
 package com.playdata.assignment.servlet.adminservlet;
-
 import com.playdata.assignment.dao.AdminDao;
 import com.playdata.assignment.dto.Cinema;
 import com.playdata.assignment.dto.Preview;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

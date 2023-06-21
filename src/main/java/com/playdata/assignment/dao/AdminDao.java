@@ -2,6 +2,7 @@ package com.playdata.assignment.dao;
 
 import com.playdata.assignment.config.JdbcConnection;
 import com.playdata.assignment.dto.Cinema;
+import com.playdata.assignment.dto.Person;
 import com.playdata.assignment.dto.Preview;
 
 import java.sql.Connection;
@@ -125,7 +126,7 @@ public class AdminDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        sql = "insert into chair(x, y,preview_cinema_id)\n" +
+        sql = "insert into chair(x, y,preview_cinema_id) " +
                 "values (?, ?, ?)";
         int x;
         int y;
@@ -149,6 +150,30 @@ public class AdminDao {
         } catch (SQLException e) {
             System.out.println("connection close fail");
         }
+    }
+
+    public List<Person>  printPerson() {
+        Connection conn = new JdbcConnection().getJdbc();
+        List<Person> people=new ArrayList<Person>();
+        String sql =
+                "SELECT * FROM PERSON,PREVIEW_CINEMA,PREVIEW,CINEMA,CHAIR "+
+                        "WHERE PERSON.CHAIR_ID = CHAIR.ID AND CHAIR.PREVIEW_CINEMA_ID=PREVIEW_CINEMA.PC_ID AND PREVIEW.ID=PREVIEW_CINEMA.PREVIEW_ID AND CINEMA.ID=PREVIEW_CINEMA.CINEMA_ID";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            ResultSet res = psmt.executeQuery();
+            while (res.next()) {
+                people.add(new Person(res.getInt("id"),res.getString("name"),res.getString("phone_num"),res.getString("cinema_name"),res.getString("address"),res.getString("movie_name"),res.getString("date_of_preview")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("connection close fail");
+        }
+        return people;
     }
 
 }

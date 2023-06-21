@@ -70,7 +70,15 @@
   <servlet-mapping>
     <servlet-name>adminCombine2</servlet-name>
     <url-pattern>/admincombine2</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>adminPrintPerson</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.adminservlet.PersonPrintServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminPrintPerson</servlet-name>
+    <url-pattern>/adminprintperson</url-pattern>
   </servlet-mapping>
 
 </web-app>
