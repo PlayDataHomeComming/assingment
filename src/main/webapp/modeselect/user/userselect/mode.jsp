@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Playdata
-  Date: 2023-06-20
-  Time: 오전 11:15
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" >
@@ -17,12 +9,9 @@
 </head>
 <body style="text-align: center; height: 100vh;">
 <div class="button">
-    <a href="/adminmain" style="text-decoration: none;"><button style="width: 300px; height: 150px;" class="btn-1"><h1>관리자</h1></button></a>
-        <a href="" style="text-decoration: none;"> <button style="width: 300px; height: 150px;" class="btn-1"><h1>고객</h1></button></a>
-    </div>
-
-
-
+    <a href="/adminmain"><button style="width: 300px; height: 150px;"><h1>Admin Mode</h1></button></a>
+    <a href="/usermain"><button style="width: 300px; height: 150px;"><h1>User Mode</h1></button></a>
+</div>
 
 </body>
 </html>

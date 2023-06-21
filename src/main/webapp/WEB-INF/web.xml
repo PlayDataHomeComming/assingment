@@ -81,4 +81,58 @@
     <url-pattern>/adminprintperson</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>userMainServlet</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.UserMainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userMainServlet</servlet-name>
+    <url-pattern>/usermain</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userSelect1PreviewPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect1.PreviewPrint</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect1PreviewPrint</servlet-name>
+    <url-pattern>/userselect1preveiwprint</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userSelect1CinemaPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect1.CinemaPrint</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect1CinemaPrint</servlet-name>
+    <url-pattern>/userselect1cinemaprint</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>chairPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.ChairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>chairPrint</servlet-name>
+    <url-pattern>/chairprint</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userSelect2PreviewPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect2.PreviewPrint2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect2PreviewPrint</servlet-name>
+    <url-pattern>/userselect2preveiwprint</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userSelect2CinemaPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect2.CinemaPrint2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect2CinemaPrint</servlet-name>
+    <url-pattern>/userselect2cinemaprint</url-pattern>
+  </servlet-mapping>
+
 </web-app>
