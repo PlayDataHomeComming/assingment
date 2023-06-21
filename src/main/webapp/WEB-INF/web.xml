@@ -108,4 +108,13 @@
     <url-pattern>/userselect1cinemaprint</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>chairPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.ChairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>chairPrint</servlet-name>
+    <url-pattern>/chairprint</url-pattern>
+  </servlet-mapping>
+
 </web-app>

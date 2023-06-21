@@ -22,8 +22,6 @@ public class CinemaPrint extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("pcId"));
-
-        resp.sendRedirect("/usermain");
+        resp.sendRedirect("/chairprint?pcId="+req.getParameter("pcId"));
     }
 }
