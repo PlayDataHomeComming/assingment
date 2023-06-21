@@ -2,6 +2,7 @@ package com.playdata.assignment.dao;
 import com.playdata.assignment.config.JdbcConnection;
 import com.playdata.assignment.dto.Chair;
 import com.playdata.assignment.dto.Cinema;
+import com.playdata.assignment.dto.Preview;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -159,6 +160,32 @@ public class UserDao {
         return 3;
 
     }
+
+    public List<Preview> relatedPreviewPrint(String cinemaId){
+        Connection conn = new JdbcConnection().getJdbc();
+        List<Preview> previews=new ArrayList<Preview>();
+        String sql = "select * from (select * from preview,preview_cinema where preview.id=preview_cinema.preview_id)as t where cinema_id=?";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1,cinemaId);
+            ResultSet res = psmt.executeQuery();
+            while (res.next()){
+                previews.add(new Preview(res.getInt("pc_id"),res.getString("movie_name"), res.getString("date_of_preview")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("connection close fail");
+        }
+        return previews;
+
+    }
+
+
 
 
 }

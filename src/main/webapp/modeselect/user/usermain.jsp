@@ -10,7 +10,7 @@
 <body>
 <div class="button">
   <a href="/userselect1preveiwprint"><button style="width: 300px; height: 70px;"><h2>시사회 정보 선택</h2></button></a><br><br>
-  <a href=""><button style="width: 300px; height: 70px;"><h2>영화관 정보 선택</h2></button></a><br><br>
+  <a href="userselect2cinemaprint"><button style="width: 300px; height: 70px;"><h2>영화관 정보 선택</h2></button></a><br><br>
 </div>
 </body>
 </html>

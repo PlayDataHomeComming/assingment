@@ -117,4 +117,22 @@
     <url-pattern>/chairprint</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>userSelect2PreviewPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect2.PreviewPrint2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect2PreviewPrint</servlet-name>
+    <url-pattern>/userselect2preveiwprint</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userSelect2CinemaPrint</servlet-name>
+    <servlet-class>com.playdata.assignment.servlet.userservlet.userselect2.CinemaPrint2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userSelect2CinemaPrint</servlet-name>
+    <url-pattern>/userselect2cinemaprint</url-pattern>
+  </servlet-mapping>
+
 </web-app>
