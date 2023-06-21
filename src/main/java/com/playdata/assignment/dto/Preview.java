@@ -3,6 +3,7 @@ package com.playdata.assignment.dto;
 public class Preview {
     private Integer id;
     private String movieName;
+
     private String dateOfPreview;
 
     public Preview(Integer id, String movieName, String dateOfPreview) {
@@ -22,4 +23,6 @@ public class Preview {
     public String getDateOfPreview() {
         return dateOfPreview;
     }
+
+
 }

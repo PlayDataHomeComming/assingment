@@ -30,11 +30,11 @@
     <url-pattern>/modeservlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>adminMain</servlet-name>
+    <servlet-name>adminMainServlet</servlet-name>
     <servlet-class>com.playdata.assignment.servlet.adminservlet.AdminMainServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>adminMain</servlet-name>
+    <servlet-name>adminMainServlet</servlet-name>
     <url-pattern>/adminmain</url-pattern>
   </servlet-mapping>
   <servlet>

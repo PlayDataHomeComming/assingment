@@ -6,26 +6,31 @@ public class Cinema {
     private String address;
     private Integer capacityChair;
 
+
+
     public Cinema(Integer id, String cinemaName, String address, Integer capacityChair) {
-        this.id = id;
-        this.cinemaName = cinemaName;
-        this.address = address;
-        this.capacityChair = capacityChair;
-    }
+            this.id = id;
+            this.cinemaName = cinemaName;
+            this.address = address;
+            this.capacityChair = capacityChair;
+        }
 
-    public Integer getId() {
-        return id;
-    }
+        public Integer getId () {
+            return id;
+        }
 
-    public String getCinemaName() {
-        return cinemaName;
-    }
+        public String getCinemaName () {
+            return cinemaName;
+        }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public Integer getCapacityChair() {
-        return capacityChair;
-    }
-}
+
+            public String getAddress () {
+                return address;
+
+            }
+
+            public Integer getCapacityChair () {
+                return capacityChair;
+            }
+        }
