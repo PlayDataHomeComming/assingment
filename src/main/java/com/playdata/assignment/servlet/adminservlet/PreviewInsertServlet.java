@@ -20,7 +20,7 @@ public class PreviewInsertServlet extends HttpServlet {
         String movieName=req.getParameter("movieName");
         String movieDate=req.getParameter("movieDate");
         new AdminDao().preInsert(movieName,movieDate);
-        resp.sendRedirect("/adminpreviewinsert");
+        resp.sendRedirect("/adminmain");
 
     }
 }

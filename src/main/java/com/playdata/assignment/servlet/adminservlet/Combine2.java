@@ -15,6 +15,7 @@ public class Combine2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer previewId=Integer.parseInt( req.getParameter("previewId"));
+        System.out.println(previewId);
         List<Cinema> cinemas=new AdminDao().getCinema();
         req.setAttribute("previewId",previewId);
         req.setAttribute("cinemas",cinemas);
@@ -24,7 +25,7 @@ public class Combine2 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer cinemaId=Integer.parseInt(req.getParameter("cinemaId"));
-        Integer previewId=(Integer)(req.getAttribute("previewId"));
+        Integer previewId=Integer.parseInt(req.getParameter("previewId"));
         System.out.println(previewId);
         System.out.println(cinemaId);
         resp.sendRedirect("/adminmain");

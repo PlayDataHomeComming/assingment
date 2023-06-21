@@ -2,10 +2,7 @@
 <%@ page import="com.playdata.assignment.dto.Cinema" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-Integer previewId=(Integer)( request.getAttribute("previewId"));
-request.setAttribute("previewId",previewId);
-%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +33,7 @@ request.setAttribute("previewId",previewId);
             <td><%=cinema.getCinemaName()%></td>
             <td><%=cinema.getAddress()%></td>
             <td><%=cinema.getCapacityChair()%></td>
-            <form method="post" action="/admincombine2"><td class="radio"><input type="submit" name="previewId" value=<%=cinema.getId()%>></td></form>
+            <form method="post" action="/admincombine2"><td class="radio"><input type="hidden" name="previewId" value=<%=request.getAttribute("previewId")%>><input type="submit" name="cinemaId" value=<%=cinema.getId()%>></td></form>
         </tr>
         <%    }%>
         </tbody>
