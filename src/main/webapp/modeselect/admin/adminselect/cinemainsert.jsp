@@ -10,12 +10,10 @@
 <body>
 <div style="text-align: center;">
     <a href="/adminpreviewinsert"><button>시사회 정보 등록하기</button></a>
-    <a href="combine1.jsp"><button>시사회 정보 영화관 정보 연결</button></a>
-    <a href="../adminselect/reservation_check.jsp"><button>예약자 명단 확인하기</button></a>
-    <a href="/modeselect/user/userselect/mode.jsp"><button>모드 선택으로 돌아가기</button></a>
+    <a href="/admincombine1"><button>시사회 정보 영화관 정보 연결</button></a>
+    <a href="/adminprintperson"><button>예약자 명단 확인하기</button></a>
+    <a href="/modeservlet"><button>모드 선택으로 돌아가기</button></a>
 </div>
-
-
 
     <form method="post" action="/admincinemainsert">
         <div class="align">

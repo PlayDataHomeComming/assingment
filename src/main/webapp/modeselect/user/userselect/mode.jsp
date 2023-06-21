@@ -17,9 +17,12 @@
 </head>
 <body style="text-align: center; height: 100vh;">
 <div class="button">
-    <a href="/adminmain"><button style="width: 300px; height: 150px; background-color: #ff2644;"><h1 style="font-size: larger;" >관리자</h1></button></a>
-    <a href=""><button style="width: 300px; height: 150px; background-color: #ff2644;"><h1 style="font-size: larger;">고객</h1></button></a>
-</div>
+    <a href="/adminmain" style="text-decoration: none;"><button style="width: 300px; height: 150px;" class="btn-1"><h1>관리자</h1></button></a>
+        <a href="" style="text-decoration: none;"> <button style="width: 300px; height: 150px;" class="btn-1"><h1>고객</h1></button></a>
+    </div>
+
+
+
 
 </body>
 </html>

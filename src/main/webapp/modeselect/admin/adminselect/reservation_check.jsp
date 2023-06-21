@@ -17,7 +17,7 @@
 </div>
 <h1 style="text-align: center; margin-top: 100px;">예약자 명단 확인하기</h1>
 <div class="align">
-    <table style=" margin-bottom: 70px; border-collapse: collapse; border-spacing: 0;"  width="700px" height="400px">
+    <table style=" margin-bottom: 70px; border-collapse: collapse; border-spacing: 0;  width :700px; height :400px;">
         <thead>
         <tr>
             <th>영화 제목</th>

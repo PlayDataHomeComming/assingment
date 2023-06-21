@@ -3,29 +3,34 @@ package com.playdata.assignment.dto;
 public class Cinema {
     private Integer id;
     private String cinemaName;
-    private String adderess;
+    private String address;
     private Integer capacityChair;
 
-    public Cinema(Integer id, String cinemaName, String adderess, Integer capacityChair) {
-        this.id = id;
-        this.cinemaName = cinemaName;
-        this.adderess = adderess;
-        this.capacityChair = capacityChair;
-    }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public String getCinemaName() {
-        return cinemaName;
-    }
+    public Cinema(Integer id, String cinemaName, String address, Integer capacityChair) {
+            this.id = id;
+            this.cinemaName = cinemaName;
+            this.address = address;
+            this.capacityChair = capacityChair;
+        }
 
-    public String getAdderess() {
-        return adderess;
-    }
+        public Integer getId () {
+            return id;
+        }
 
-    public Integer getCapacityChair() {
-        return capacityChair;
-    }
-}
+        public String getCinemaName () {
+            return cinemaName;
+        }
+
+
+
+            public String getAddress () {
+                return address;
+
+            }
+
+            public Integer getCapacityChair () {
+                return capacityChair;
+            }
+        }

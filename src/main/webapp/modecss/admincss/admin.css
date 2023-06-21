@@ -8,28 +8,17 @@
 }
 
 body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.image-container {
     position: relative;
-    overflow: hidden;
 }
-
-.image-container::before {
+body::before {
     content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.image-container img {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/img/logo2.png");
+    opacity: 0.4;
+    z-index: -1;
+    overflow: hidden;
 }

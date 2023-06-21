@@ -2,65 +2,87 @@ body {
     position: relative;
 }
 
-h1 {
-    font-size: 50px;
-    color: coral;
-}
 
 body::before {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/img/logo1.png");
-    opacity: 0.3;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/img/logo2.png");
+    opacity: 0.4;
     z-index: -1;
+    overflow: hidden;
 }
-.element1 {
-    background-position: 0 0; /* 이미지1의 배경 위치 */
-    background-size: 12.5% 50%;
-}
-
-.element2 {
-    background-position: 12.5% 0; /* 이미지2의 배경 위치 */
-    background-size: 12.5% 50%;
+h1 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #fff9fc;
+    font-family: 굴림;
 }
 
-.element3 {
-    background-position: 25% 0; /* 이미지3의 배경 위치 */
-    background-size: 12.5% 50%;
-}
 
-.element4 {
-    background-position: 37.5% 0; /* 이미지4의 배경 위치 */
-    background-size: 12.5% 50%;
-}
-
-.element5 {
-    background-position: 50% 0; /* 이미지5의 배경 위치 */
-    background-size: 12.5% 50%;
-}
-
-.element6 {
-    background-position: 62.5% 0; /* 이미지6의 배경 위치 */
-    background-size: 12.5% 50%;
-}
-
-.element7 {
-    background-position: 75% 0; /* 이미지7의 배경 위치 */
-    background-size: 12.5% 50%;
-}
-
-.element8 {
-    background-position: 87.5% 0; /* 이미지8의 배경 위치 */
-    background-size: 12.5% 50%;
-}
 .button{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+button,
+button::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+button {
+    background-color: #222222;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 1em auto;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration-line: none;
+}
+button::before,
+button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+button:hover {
+    color: #222222;
+}
+/* BUTTON 1 */
+.btn-1::after {
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.btn-1:hover:after {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
