@@ -95,5 +95,60 @@ public class AdminDao {
         return cinemas;
     }
 
+    public void insertCombinePreview(String previewId, String cinemaId){
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "insert into preview_cinema(preview_id, cinema_id)\n" +
+                "values (?, ?)";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, previewId);
+            psmt.setString(2, cinemaId);
+            if (psmt.executeUpdate() == 0) {
+                System.out.println("insertPreview err");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        sql = "select * from (select * from cinema,preview_cinema where cinema.id=preview_cinema.cinema_id)as t "
+                +"where preview_id=? and cinema_id=?";
+        Integer previewCinemaId=null;
+        Integer numChair=null;
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1,previewId);
+            psmt.setString(2,cinemaId);
+            ResultSet res = psmt.executeQuery();
+            while (res.next()){
+                previewCinemaId=res.getInt("pc_id");
+                numChair=res.getInt("capacity_chair");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        sql = "insert into chair(x, y,preview_cinema_id)\n" +
+                "values (?, ?, ?)";
+        int x;
+        int y;
+        for(int i = 0; i<numChair; i++) {
+            y=(int)(i/5)+1;
+            x=(i%5)+1;
+            try {
+                PreparedStatement psmt = conn.prepareStatement(sql);
+                psmt.setInt(1, x);
+                psmt.setInt(2, y);
+                psmt.setInt(3, previewCinemaId);
+                if (psmt.executeUpdate() == 0) {
+                    System.out.println("insertChair err");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("connection close fail");
+        }
+    }
 
 }

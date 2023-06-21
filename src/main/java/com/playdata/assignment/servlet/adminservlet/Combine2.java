@@ -26,8 +26,7 @@ public class Combine2 extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer cinemaId=Integer.parseInt(req.getParameter("cinemaId"));
         Integer previewId=Integer.parseInt(req.getParameter("previewId"));
-        System.out.println(previewId);
-        System.out.println(cinemaId);
+        new AdminDao().insertCombinePreview(previewId+"",cinemaId+"");
         resp.sendRedirect("/adminmain");
     }
 }
