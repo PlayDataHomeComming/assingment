@@ -7,20 +7,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../userSelectCss/1-2cinema_view.css">
+  <link rel="stylesheet" href="/modecss/usercss/userselectcss/cinemaprint.css">
 </head>
 
 <body>
-<div style="text-align: center;">
-  <a href="../userSelectHtml/1-1preview_view.html"><button>시사회 정보 보기</button></a>
-  <a href="C:\Users\Playdata\Desktop\2jo-html\modeSelect\main.html"><button>모드 선택으로 돌아가기</button></a>
+<div style="text-align: center; ">
+  <a href="/userselect1previewprint"><button>시사회 정보 선택으로 돌아가기</button></a>
+  <a href="/usermain"><button>정보 선택 모드로 돌아가기</button></a>
 </div>
-<h1 style="text-align: center; margin-top: 70px;">영화관 정보 선택</h1>
+<h1 style="text-align: center; transform: translateY(10px)">영화관 정보 선택</h1>
 <div class="align">
-  <table style=" margin-left: 50px;  margin-bottom: 50px;  border-collapse: collapse; border-spacing: 0;"width="400px" height="200px">
+  <table style="border-spacing: 0; width : 400px; height:200px; transform: translateX(48px) translateY(-20px);">
     <thead>
     <tr>
-      <th>영화관 번호</th>
       <th style="width: 120px;">영화관 이름</th>
       <th>영화관 장소</th>
     </tr>
@@ -30,10 +29,9 @@
       List<Cinema> cinemas = (List<Cinema>)request.getAttribute("cinemas");
       for (Cinema cinema : cinemas) {%>
     <tr>
-      <td><%=cinema.getId()%></td>
       <td><%=cinema.getCinemaName()%></td>
       <td><%=cinema.getAddress()%></td>
-      <form method="post" action="/userselect1cinemaprint"><td class="radio"><input type="submit" name="pcId" value=<%=cinema.getId()%>></td></form>
+      <form method="post" action="/userselect1cinemaprint"><td class="radio"><input type="hidden" name="pcId" value=<%=cinema.getId()%>><input type="submit" value="선택"></td></form>
     </tr>
     <%    }%>
     </tbody>

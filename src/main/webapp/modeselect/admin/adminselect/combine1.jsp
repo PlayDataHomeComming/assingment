@@ -23,10 +23,9 @@
 </div>
 
 
-<h1 style="text-align: center;">시사회 정보 선택하기</h1>
+<h1 style="text-align: center; margin-top: 60px;">시사회 정보 선택하기</h1>
 <div class="align">
-    <table  style=" border-collapse: collapse; border-spacing: 0; width:700px; height:400px;">
-
+    <table  style="margin-left: 90px;border-spacing: 0; width: 700px;height: 400px;">
         <thead>
         <tr>
             <th>No.</th>
@@ -41,7 +40,7 @@
                     <td><%=preview.getId()%></td>
                     <td><%=preview.getMovieName()%></td>
                     <td><%=preview.getDateOfPreview()%></td>
-                    <form method="post" action="/admincombine1"><td class="radio"><input type="hidden" name="previewId" value=<%=preview.getId()%>><input type="submit" value="선택"></td></form>
+                    <form method="post" action="/admincombine1"><td class="btn"><input type="hidden" name="previewId" value=<%=preview.getId()%>><input type="submit" value="선택"></td></form>
                 </tr>
         <%    }%>
 
@@ -52,5 +51,4 @@
 
 </html>
 
-</html>
 

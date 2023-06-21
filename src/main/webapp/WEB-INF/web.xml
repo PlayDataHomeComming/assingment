@@ -96,7 +96,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>userSelect1PreviewPrint</servlet-name>
-    <url-pattern>/userselect1preveiwprint</url-pattern>
+    <url-pattern>/userselect1previewprint</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -123,7 +123,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>userSelect2PreviewPrint</servlet-name>
-    <url-pattern>/userselect2preveiwprint</url-pattern>
+    <url-pattern>/userselect2previewprint</url-pattern>
   </servlet-mapping>
 
   <servlet>

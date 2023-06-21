@@ -12,18 +12,13 @@
 
 <body>
 <div style="text-align: center;">
-  <a href="../userSelectHtml/1-2cinema_view.html"><button>영화관 정보 보기</button></a>
-  <a href="C:\Users\Playdata\Desktop\2jo-html\modeSelect\main.html"><button>모드 선택으로 돌아가기</button></a>
+  <a href="/usermain"><button>모드 선택으로 돌아가기</button></a>
 </div>
 <h1 style="text-align: center; margin-top: 70px;">좌석 선택</h1>
  <div class="align">
-    <table style=" border-collapse: collapse; border-spacing: 0;" width="600px" height="400px">
+    <table style=" border-collapse: collapse; border-spacing: 0;width :600px; height :400px;">
       <thead>
       <tr>
-        <th>id</th>
-        <th>x</th>
-        <th>y</th>
-        <th>status</th>
         <th colspan="5" style="background-color: rgb(0, 0, 0); color: azure; text-align: center;">SCREEN</th>
       </tr>
       </thead>
@@ -31,14 +26,31 @@
 
       <%
         List<Chair> chairs = (List<Chair>)request.getAttribute("chairs");
-        for (Chair chair : chairs) {%>
-      <tr>
-        <td><%=chair.getId()%></td>
-        <td><%=chair.getX()%></td>
-        <td><%=chair.getY()%></td>
+        int rowCount = 0;
+        char rowChar = 'A';
+        for (Chair chair : chairs) {
+      if (rowCount % 5 == 0) {
+      out.println("<tr>");
+        }%>
+        <td>
+          <form method="post" action="/reservation">
+          <input type="hidden" name="chairId" value=<%=chair.getId()%>>
+            <input type="button" value="<%= rowChar + "" + (rowCount % 5 + 1) %>">
+          </form>
+        </td>
         <td><%=chair.getStatus()%></td>
-      </tr>
-      <%    }%>
+      <%
+      if (rowCount % 5 == 4) { // 5개의 열마다 행 닫기
+      out.println("</tr>");
+        rowChar++;
+      }
+      rowCount++;
+      }
+      // 마지막 행이 5의 배수가 아니면 행 닫기
+      if (rowCount % 5 != 0) {
+      out.println("</tr>");
+      }
+      %>
       </tbody>
     </table>
 
