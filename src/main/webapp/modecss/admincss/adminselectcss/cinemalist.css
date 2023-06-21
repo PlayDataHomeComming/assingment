@@ -1,0 +1,11 @@
+thead {
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    color: azure;
+    text-align: center;
+}
+td {
+    border: 1px solid rgb(36, 37, 38);
+    text-align: center;
+    background-color: floralwhite;
+}

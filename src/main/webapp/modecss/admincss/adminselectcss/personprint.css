@@ -14,6 +14,7 @@ td {
     border: 1px solid rgb(36, 37, 38);
     padding: 3px;
     text-align: center;
+    background-color: floralwhite;
 
 }
 .radio{
@@ -27,4 +28,29 @@ thead{
     text-align: center;
     height: 40px;
 
+}
+
+body {
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/img/logo2.png");
+    opacity: 0.2;
+    z-index: -1;
+    overflow: hidden;
+}
+
+button {
+    background-color: #222222;
+    border: 3px solid #fff;
+    border-radius: 13px;
+    color: white;
 }

@@ -13,6 +13,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdminDao {
+
+    public List<Cinema> cinemaList() {
+        List<Cinema> cinemas = new ArrayList<Cinema>();
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "select * " +
+                "from cinema";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet resultSet = pst.executeQuery();
+            while (resultSet.next()) {
+                cinemas.add(new Cinema
+                        (resultSet.getInt("id"),
+                                resultSet.getString("cinema_name"),
+                                resultSet.getString("address"),
+                                resultSet.getInt("capacity_chair")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return cinemas;
+    }
+
+        public List<Preview> previewList() {
+        List<Preview> previews = new ArrayList<Preview>();
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "select * " +
+                "from preview";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet resultSet = pst.executeQuery();
+            while (resultSet.next()) {
+                previews.add(new Preview
+                        (resultSet.getInt("id"),
+                                resultSet.getString("movie_name"),
+                                resultSet.getString("date_of_preview")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return previews;
+
+    }
     public void preInsert(String movieName, String dateOfPreview) {
         Connection conn = new JdbcConnection().getJdbc();
 

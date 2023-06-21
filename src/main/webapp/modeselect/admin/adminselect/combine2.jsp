@@ -25,9 +25,9 @@ String previewId=request.getAttribute("previewId")+"";
 <body>
 
 
-<h1 style="text-align: center; margin-top: 100px;">영화관 정보 선택하기</h1>
+<h1 style="text-align: center; margin-top: 60px;">영화관 정보 선택하기</h1>
 <div class="align">
-    <table  style="margin-left: 120px; margin-bottom: 50px; border-collapse: collapse; border-spacing: 0;width:700px; height:400px;">
+    <table  style="margin-left: 90px;border-spacing: 0; width: 700px;height: 400px;">
         <thead>
         <tr>
             <th>No.</th>

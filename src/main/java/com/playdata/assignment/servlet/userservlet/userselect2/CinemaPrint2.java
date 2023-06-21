@@ -20,6 +20,6 @@ public class CinemaPrint2 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/userselect2preveiwprint?cinemaId="+req.getParameter("cinemaId"));
+        resp.sendRedirect("/userselect2previewprint?cinemaId="+req.getParameter("cinemaId"));
     }
 }

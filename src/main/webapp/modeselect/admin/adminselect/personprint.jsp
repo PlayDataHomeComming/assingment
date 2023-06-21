@@ -16,9 +16,9 @@
     <a href="/admincombine1"><button>시사회 정보 영화관 정보 연결</button></a>
     <a href="/modeservlet"><button>모드 선택으로 돌아가기</button></a>
 </div>
-<h1 style="text-align: center; margin-top: 100px;">예약자 명단 확인하기</h1>
+<h1 style="text-align: center; margin-top: 60px;">예약자 명단 확인하기</h1>
 <div class="align">
-    <table style=" margin-bottom: 70px; border-collapse: collapse; border-spacing: 0;  width:700px; height :400px;">
+    <table style="border-spacing: 0;  width:700px; height :400px;">
         <thead>
         <tr>
             <th>영화 제목</th>

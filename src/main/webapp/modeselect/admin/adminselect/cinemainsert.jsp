@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en" class="back">
+<html lang="en" style="background-color: #ff2099">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,9 @@
     <a href="/adminprintperson"><button>예약자 명단 확인하기</button></a>
     <a href="/modeservlet"><button>모드 선택으로 돌아가기</button></a>
 </div>
-
+<marquee style="font-size: 60px; color: #f9ffe5;">요기어때? 야보자</marquee>
+<div style="display: flex;">
+    <div style="flex: 1;">
     <form method="post" action="/admincinemainsert">
         <div class="align">
         <h1>영화관 정보 등록하기</h1>
@@ -25,8 +27,15 @@
             <button type="submit">등록</button>
         </div>
         </div>
-    </form>
 
+    </form>
+    </div>
+
+<div style="flex: 1;">
+<%@include file="cinemalist.jsp"%>
+</div>
+</div>
+<marquee style="font-size: 40px; color: #fff6fc;">요기어때? 야보자</marquee>
 
 </body>
 </html>
