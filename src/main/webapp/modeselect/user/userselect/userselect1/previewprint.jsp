@@ -22,7 +22,7 @@
 </div>
 <h1 style="text-align: center; transform: translatey(20px);">시사회 정보 선택</h1>
 <div class="align">
-    <table style="transform: translatey(20px) translateX(40px);border-spacing: 0;width :450px; height:200px;">
+    <table style="border-spacing: 0; width : 600px; height:200px; transform: translateX(38px); margin-top: 85px;">
         <thead>
         <tr>
             <th style="width: 40%;">영화 제목</th>
@@ -31,8 +31,25 @@
         </thead>
         <tbody>
         <%
+            int pageSize = 15;
             List<Preview> previews = (List<Preview>)request.getAttribute("previews");
-            for (Preview preview : previews) {%>
+            int totalRows = previews.size();
+            int totalPages = (int) Math.ceil((double) totalRows / pageSize);
+
+            int currentPage = 1;
+            if (request.getParameter("page") != null) {
+                currentPage = Integer.parseInt(request.getParameter("page"));
+            }
+
+            int startRow = (currentPage - 1) * pageSize;
+            int endRow = currentPage * pageSize;
+            if (endRow > totalRows) {
+                endRow = totalRows;
+            }
+
+            for (int i = startRow; i < endRow; i++) {
+                Preview preview = previews.get(i);
+        %>
         <tr>
             <td><%=preview.getMovieName()%></td>
             <td><%=preview.getDateOfPreview()%></td>
@@ -43,6 +60,12 @@
         </tbody>
     </table>
 </div>
-
+<br><br><br><br><br>
+<div style="text-align: center;font-weight: bold;">
+    <% for (int i = 1; i <= totalPages; i++) { %>
+    &nbsp;&nbsp;
+    <a href="?page=<%= i %>" style="color: black; text-decoration: none;"><%= i %></a>
+    <% } %>
+</div>
 </body>
 </html>

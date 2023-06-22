@@ -22,7 +22,7 @@ String previewId=request.getAttribute("previewId")+"";
     <a href="/adminprintperson"><button>예약자 명단 확인하기</button></a>
     <a href="/modeservlet"><button>모드 선택으로 돌아가기</button></a>
 </div>
-<body>
+
 
 
 <h1 style="text-align: center; margin-top: 60px;">영화관 정보 선택하기</h1>
@@ -39,7 +39,26 @@ String previewId=request.getAttribute("previewId")+"";
 
         <%
             List<Cinema> cinemas = (List<Cinema>)request.getAttribute("cinemas");
-            for (Cinema cinema : cinemas) {%>
+            int pageSize = 15;
+            int totalRows = cinemas.size();
+            int totalPages = (int) Math.ceil((double) totalRows / pageSize);
+
+            int currentPage = 1;
+            if (request.getParameter("page") != null) {
+                currentPage = Integer.parseInt(request.getParameter("page"));
+            }
+
+            int startRow = (currentPage - 1) * pageSize;
+            int endRow = currentPage * pageSize;
+            if (endRow > totalRows) {
+                endRow = totalRows;
+            }
+
+            for (int i = startRow; i < endRow; i++) {
+                Cinema cinema = cinemas.get(i);
+        %>
+
+
         <tr>
             <td><%=cinema.getId()%></td>
             <td><%=cinema.getCinemaName()%></td>
@@ -51,6 +70,14 @@ String previewId=request.getAttribute("previewId")+"";
 
         </tbody>
     </table>
+</div>
+
+
+<div style="text-align: center;font-weight: bold;">
+    <% for (int i = 1; i <= totalPages; i++) { %>
+    &nbsp;&nbsp;
+    <a href="?page=<%= i %>&previewId=<%=request.getParameter("previewId")%>" style="color: black; text-decoration: none;"><%= i %></a>
+    <% } %>
 </div>
 </body>
 </html>

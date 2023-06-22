@@ -80,6 +80,7 @@ public class AdminDao {
             System.out.println("connection close fail");
         }
 
+
     }
     public void cinInsert(String cinemaName, String address, String numChair) {
         Connection conn = new JdbcConnection().getJdbc();
@@ -97,6 +98,7 @@ public class AdminDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
     public List<Preview> getPreview() {
         Connection conn = new JdbcConnection().getJdbc();

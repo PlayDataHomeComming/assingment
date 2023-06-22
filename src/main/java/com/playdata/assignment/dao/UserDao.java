@@ -75,7 +75,6 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
 //      해당하는 check_id의 pc_id 저장
         List<Integer> check_pc_id = new ArrayList<Integer>();
         String Sql = "select * from chair, preview_cinema where chair.preview_cinema_id=preview_cinema.pc_id " +
@@ -92,7 +91,6 @@ public class UserDao {
                 throw new RuntimeException(e);
             }
         }
-
         Sql = "select * from chair, preview_cinema where chair.preview_cinema_id=preview_cinema.pc_id " +
                 "and chair.id=?";
         for (Integer chair_id:checkChair_id) {
@@ -112,9 +110,6 @@ public class UserDao {
                 throw new RuntimeException(e);
             }
         }
-
-
-
         String checkSql = "select * from chair where id=?";
         String checkChairStatus=null;
         try {
@@ -134,10 +129,10 @@ public class UserDao {
         try {
             PreparedStatement psmt = conn.prepareStatement(sql);
             psmt.setString(1, chairId);
+            psmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         String sql5 = "insert into person(chair_id, name,phone_num)\n" +
                 "values (?, ?, ?)";
         try {
@@ -151,16 +146,13 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         try {
             conn.close();
         } catch (SQLException e) {
             System.out.println("connection close fail");
         }
         return 3;
-
     }
-
     public List<Preview> relatedPreviewPrint(String cinemaId){
         Connection conn = new JdbcConnection().getJdbc();
         List<Preview> previews=new ArrayList<Preview>();
